@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Cadastro de Novo Usuário {% endblock %}
+
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style_novo_jogo.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col- mx-auto col-6">
+        <div class="container__pai__logo">
+            <img class="logo " src="{{ url_for('static', filename='img/usuario.png')}}" id="logo" alt="">
+        </div>
+        <div class="container__pai__titulo">
+            <h3 class="titulo__pag">Cadastro de Usuário</h3>
+        </div>
+
+            <form class="flex-lg-row mx-auto col-6" method="post" action="{{url_for('cadastro_cliente')}}" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label for="">Nome do Usuário</label>
+                    <input type="text" name="nome" id="" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Username</label>
+                    <input type="text" name="username" id="" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Senha</label>
+                    <input type="text" name="senha" id="" required class="form-control">
+                </div>
+                
+                <br>
+                <div class="pai__botoes d-flex justify-content-around">
+                    <button type="submit" class="btn bg-info text-white btns my-2 my-sm-0  btns">Cadastrar</button>
+                    <a class="btn bg-dark text-white my-2 my-sm-0 btns" href="{{ url_for('login') }}">Voltar</a>
+                </div>
+            </form>
+    </div>
+</div>
+{% endblock %}
