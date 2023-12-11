@@ -7,21 +7,21 @@
 {% endblock %}
 
 {% block content %}
-
-
-<main class="container__pai">
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <ul id="messages" class="list-unstyled">
+<h3 class="text-center text-muted mb-3"></h3>
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul id="messages" class="list-unstyled">
             {% for message in messages %}
-                <li class="alert alert-success alert-dismissible fade show" role="alert">
+                <li class="alert alert-success">
                     {{ message }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </li>
             {% endfor %}
-        </ul>
-    {% endif %}
-    {% endwith %}
+            </ul>
+        {% endif %}
+{% endwith %}
+
+<main class="container__pai">
     <div class="container__pai__logo">
         <img src="{{ url_for('static', filename='img/gameboy.png')}}" alt="imagem de um gameboy" class="imagem__filho__logo">
     </div>
